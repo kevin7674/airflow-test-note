@@ -9,11 +9,9 @@ $ docker exec -ti airflow bash
 $ airflow webserver -p 8080
 ```
 
-```
 export AIRFLOW_HOME="/opt/conda/bin/airflow"
-```
 
-```
+
 ![](https://i.imgur.com/A6TQ6IW.png)
 * browser use localhost:30001
 ![](https://i.imgur.com/ejcejWj.png)
