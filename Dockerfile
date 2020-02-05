@@ -4,7 +4,7 @@ RUN pip install apache-airflow
 RUN airflow initdb
 
 RUN mkdir /root/airflow/dags
-COPY hello.py /root/airflow/dags
+COPY dagbag.py /root/airflow/dags
 
 #RUN airflow webserver -p 8080
 
