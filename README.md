@@ -1,5 +1,5 @@
 # Airflow
-## Install [Jenkins](https://hackmd.io/wGmga44dSj-kreIDFfvorw?view) 
+
 ## Install Airflow container
 * https://github.com/apache/airflow
 ```shell=
