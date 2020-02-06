@@ -14,6 +14,9 @@ $ export AIRFLOW_HOME="/root/airflow"
 # $ airflow initdb
 $ airflow scheduler &
 $ airflow webserver -p 8080 &
+
+$ cd /root/airflow/dags
+$ python test_hello.py
 ```
 
 
