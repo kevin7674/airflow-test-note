@@ -9,6 +9,7 @@ $ docker exec -ti airflow bash
 $ airflow webserver -p 8080
 ```
 
+#export AIRFLOW_HOME="/opt/conda/lib/python3.7/site-packages/airflow/example_dags/"
 export AIRFLOW_HOME="/opt/conda/lib/python3.7/site-packages/airflow/example_dags/"
 
 
