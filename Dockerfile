@@ -3,7 +3,7 @@ FROM tiangolo/python-machine-learning:python3.7
 RUN pip install apache-airflow
 RUN airflow initdb
 
-COPY airflow.cfg /root/airflow
+#COPY airflow.cfg /root/airflow
 
 RUN mkdir /root/airflow/dags
 RUN chmod 777 /root/airflow/dags
