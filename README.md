@@ -10,9 +10,9 @@ $ airflow webserver -p 8080
 ```
 
 #export AIRFLOW_HOME="/opt/conda/lib/python3.7/site-packages/airflow/example_dags/"
-
 export AIRFLOW_HOME="/root/airflow"
 
+airflow initdb
 
 ![](https://i.imgur.com/A6TQ6IW.png)
 * browser use localhost:30001
