@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 
 # 定义默认参数
 default_args = {
-    'owner': 'airflow',  # 拥有者名称
+    'owner': 'Kevin',  # 拥有者名称
     'start_date': datetime(2020, 2, 6, 16, 00),  # 第一次开始执行的时间，为格林威治时间，为了方便测试，一般设置为当前时间减去执行周期
     'email': ['kevin7674@gmail.com'],  # 接收通知的email列表
     'email_on_failure': True,  # 是否在任务执行失败时接收邮件
