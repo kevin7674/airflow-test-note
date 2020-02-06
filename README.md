@@ -7,7 +7,7 @@
 $ sh auto_build.sh
 $ docker exec -ti airflow bash
 $ airflow scheduler &
-$ airflow webserver -p 8080
+$ airflow webserver -p 8080 &
 ```
 
 #export AIRFLOW_HOME="/opt/conda/lib/python3.7/site-packages/airflow/example_dags/"
