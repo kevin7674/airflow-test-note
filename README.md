@@ -6,6 +6,7 @@
 ## Install 
 $ sh auto_build.sh
 $ docker exec -ti airflow bash
+$ airflow scheduler 
 $ airflow webserver -p 8080
 ```
 
