@@ -43,13 +43,13 @@ def task_3():
         f.write('%s\n' % current_time)
 		
 # 定義要執行的Python函數4
-def task_3():
+def task_4():
     current_time = str(datetime.today())
     with open('/usr/local/airflow/task_3.txt', 'a') as f:
         f.write('%s\n' % current_time)
 		
 # 定義要執行的Python函數5
-def task_3():
+def task_5():
     current_time = str(datetime.today())
     with open('/usr/local/airflow/task_3.txt', 'a') as f:
         f.write('%s\n' % current_time)
@@ -100,3 +100,4 @@ t2 >> t3
 t2 >> t4
 
 t4 >> t5
+
