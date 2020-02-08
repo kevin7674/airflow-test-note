@@ -11,8 +11,8 @@ default_args = {
     #'email': ['kevin7674@gmail.com'],  # 接收通知的email列表
     #'email_on_failure': True,  # 是否在任務執行失敗時接收邮件
     #'email_on_retry': True,  # 是否在任務重試時接收邮件
-    'retries': 3,  # 失敗重試次數
-    'retry_delay': timedelta(seconds=30)  # 失敗重試間隔
+    'retries': 2,  # 失敗重試次數
+    'retry_delay': timedelta(seconds=60)  # 失敗重試間隔
 }
 
 # 定義DAG
@@ -20,7 +20,7 @@ dag = DAG(
     dag_id='test_flow',  # dag_id
     default_args=default_args,  # 指定預設參數
     # schedule_interval="00, *, *, *, *"  # 執行周期，依次是分，時，天，月，年，此處表示每個整點執行
-    schedule_interval=timedelta(minutes=2)  # 執行周期，表示每分鐘執行一次
+    schedule_interval=timedelta(minutes=1)  # 執行周期，表示每分鐘執行一次
 )
 
 # 定義要執行的Python函數1
@@ -64,9 +64,11 @@ t3 = PythonOperator(
     dag=dag,  # 指定歸屬的dag
 )
 
-t2.set_upstream(t1)
+#t2.set_upstream(t1)
+t1 >> t2
 # 表示t2這個任務只有在t1這個任務執行成功時才執行，
 # 等同於 t1.set_downstream(t2)
 # 同時等價於 dag.set_dependency('test_flow_1', 'test_flow_2')
 
-t3.set_upstream(t1)  # 同理
+#t3.set_upstream(t1)  # 同理
+t1 >> t3
