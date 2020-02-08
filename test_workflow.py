@@ -11,8 +11,8 @@ default_args = {
     #'email': ['kevin7674@gmail.com'],  # 接收通知的email列表
     #'email_on_failure': True,  # 是否在任務執行失敗時接收邮件
     #'email_on_retry': True,  # 是否在任務重試時接收邮件
-    'retries': 2,  # 失敗重試次數
-    'retry_delay': timedelta(seconds=60)  # 失敗重試間隔
+    'retries': 1,  # 失敗重試次數
+    'retry_delay': timedelta(seconds=600)  # 失敗重試間隔
 }
 
 # 定義DAG
@@ -100,4 +100,3 @@ t2 >> t3
 t2 >> t4
 
 t4 >> t5
-
