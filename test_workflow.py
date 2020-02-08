@@ -12,7 +12,7 @@ default_args = {
     #'email_on_failure': True,  # 是否在任務執行失敗時接收邮件
     #'email_on_retry': True,  # 是否在任務重試時接收邮件
     'retries': 1,  # 失敗重試次數
-    'retry_delay': timedelta(seconds=600)  # 失敗重試間隔
+    'retry_delay': timedelta(seconds=60)  # 失敗重試間隔
 }
 
 # 定義DAG
@@ -20,7 +20,7 @@ dag = DAG(
     dag_id='task',  # dag_id
     default_args=default_args,  # 指定預設參數
     # schedule_interval="00, *, *, *, *"  # 執行周期，依次是分，時，天，月，年，此處表示每個整點執行
-    schedule_interval=timedelta(minutes=1)  # 執行周期，表示每分鐘執行一次
+    schedule_interval=timedelta(minutes=10)  # Cronjob 執行周期，表示每分鐘執行一次
 )
 
 # 定義要執行的Python函數1
