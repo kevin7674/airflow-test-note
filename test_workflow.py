@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 # 定義參數
 default_args = {
     'owner': 'Kevin',  # 擁有者名稱
-    'start_date': datetime(2020, 2, 6, 16, 00),  # 第一次開始時間(格林威治)，為了方便測試，一般設置為當前時間減去執行週期
+    'start_date': datetime(2020, 2, 9, 16, 00),  # 第一次開始時間(格林威治)，為了方便測試，一般設置為當前時間減去執行週期
     #'email': ['kevin7674@gmail.com'],  # 接收通知的email列表
     #'email_on_failure': True,  # 是否在任務執行失敗時接收邮件
     #'email_on_retry': True,  # 是否在任務重試時接收邮件
