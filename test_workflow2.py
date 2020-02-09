@@ -46,13 +46,13 @@ def task_3():
 # 定義要執行的Python函數4
 def task_4():
     current_time = str(datetime.today())
-    with open('/usr/local/airflow/task_3.txt', 'a') as f:
+    with open('/usr/local/airflow/task_4.txt', 'a') as f:
         f.write('%s\n' % current_time)
 		
 # 定義要執行的Python函數5
 def task_5():
     current_time = str(datetime.today())
-    with open('/usr/local/airflow/task_3.txt', 'a') as f:
+    with open('/usr/local/airflow/task_5.txt', 'a') as f:
         f.write('%s\n' % current_time)
 
 # 定義要執行的task 1
