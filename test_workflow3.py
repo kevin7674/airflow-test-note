@@ -22,7 +22,7 @@ dag = DAG(
     dag_id='test_flow3',  # dag_id
     default_args=default_args,  # 指定預設參數
     # schedule_interval="00, *, *, *, *"  # 執行周期，依次是分，時，天，月，年，此處表示每個整點執行
-    schedule_interval=timedelta(minutes=5)  # Cronjob 執行周期，表示每分鐘執行一次
+    schedule_interval=timedelta(minutes=60)  # Cronjob 執行周期，表示每分鐘執行一次
 )
 
 # 定義要執行的Python函數1
