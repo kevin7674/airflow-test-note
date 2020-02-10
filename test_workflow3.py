@@ -83,7 +83,7 @@ t3 = DummyOperator(
 # 定義要執行的的task 4
 t4 = PythonOperator(
     task_id='task2',  # task_id
-    python_callable=task_2,  # 指定要執行的函數
+    python_callable=task_4,  # 指定要執行的函數
     dag=dag,  # 指定歸屬的dag
     retries=1,  # 失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。
 )
