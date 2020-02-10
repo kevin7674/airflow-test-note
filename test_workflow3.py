@@ -76,13 +76,13 @@ t2 = PythonOperator(
 # 定義要執行的的task 3
 t3 = DummyOperator(
     # Operator that does literally nothing. It can be used to group tasks in a DAG.
-    task_id='task4_do_nothing',  # task_id
+    task_id='task3_do_nothing',  # task_id
     dag=dag,  # 指定歸屬的dag
 )
 
 # 定義要執行的的task 4
 t4 = PythonOperator(
-    task_id='task2',  # task_id
+    task_id='task4',  # task_id
     python_callable=task_4,  # 指定要執行的函數
     dag=dag,  # 指定歸屬的dag
     retries=1,  # 失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。
