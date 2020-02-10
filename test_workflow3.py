@@ -59,16 +59,16 @@ def task_5():
 
 # 定義要執行的task 1
 t1 = BashOperator(
-    task_id='task_bash',
+    task_id='task1_bash',
     bash_command='date',  # print_date	
-    bash_command='sleep 5',
+    bash_command='sleep 15',
     dag=dag,  # 指定歸屬的dag
     retries=3,  # 失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。 
 )
 
 # 定義要執行的task 2
 t2 = PythonOperator(
-    task_id='task_2',  # task_id
+    task_id='task2',  # task_id
     python_callable=task_2,  # 指定要執行的函數
     dag=dag,  # 指定歸屬的dag
     retries=1,  # 失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。
@@ -76,7 +76,7 @@ t2 = PythonOperator(
 
 # 定義要執行的的task 3
 t3 = PythonOperator(
-    task_id='task_3',  # task_id
+    task_id='task3',  # task_id
     python_callable=task_3,  # 指定要執行的函數
     dag=dag,  # 指定歸屬的dag
 )
@@ -84,13 +84,13 @@ t3 = PythonOperator(
 # 定義要執行的的task 4
 t4 = DummyOperator(
     # Operator that does literally nothing. It can be used to group tasks in a DAG.
-    task_id='task_4',  # task_id
+    task_id='task4_do_nothing',  # task_id
     dag=dag,  # 指定歸屬的dag
 )
 
 # 定義要執行的的task 5
 t5 = PythonOperator(
-    task_id='task_5',  # task_id
+    task_id='task5',  # task_id
     python_callable=task_5,  # 指定要執行的函數
     dag=dag,  # 指定歸屬的dag
 )
