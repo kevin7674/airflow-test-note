@@ -92,7 +92,7 @@ t4 = DummyOperator(
 t5 = BashOperator(
     task_id='task5_bash',
     bash_command='date',  # print_date	
-    bash_command='sleep 15',
+    #bash_command='sleep 5',
     dag=dag,  # 指定歸屬的dag
     retries=3,  # 失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。 
 )
