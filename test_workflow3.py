@@ -60,6 +60,7 @@ def task_5():
 # 定義要執行的task 1
 t1 = BashOperator(
     task_id='print_date',
+    bash_command='date',	
     bash_command='sleep 5',
     dag=dag,  # 指定歸屬的dag
     retries=3,  # 失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。 
@@ -82,6 +83,7 @@ t3 = PythonOperator(
 
 # 定義要執行的的task 4
 t4 = DummyOperator(
+    # Operator that does literally nothing. It can be used to group tasks in a DAG.
     task_id='task_4',  # task_id
     dag=dag,  # 指定歸屬的dag
 )
