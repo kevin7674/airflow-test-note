@@ -50,6 +50,7 @@ def task_4():
     current_time = str(datetime.today())
     with open('/usr/local/airflow/task_4.txt', 'a') as f:
         f.write('%s\n' % current_time)
+    assert 1 == 2  # 可以在函数中使用assert斷言來判斷執行是否正常，也可以直接抛出異常行是否正常，也可以直接抛出異常
 		
 # 定義要執行的Python函數5
 #def task_5():
