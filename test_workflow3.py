@@ -59,8 +59,8 @@ def task_5():
 
 # 定義要執行的task 1
 t1 = BashOperator(
-    task_id='print_date',
-    bash_command='date',	
+    task_id='task_bash',
+    bash_command='date',  # print_date	
     bash_command='sleep 5',
     dag=dag,  # 指定歸屬的dag
     retries=3,  # 失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。 
