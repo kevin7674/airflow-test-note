@@ -58,7 +58,7 @@ def task_4():
 #        f.write('%s\n' % current_time)
 
 def branch(**context):
-
+    print("select branch")
 
 # 定義要執行的task 1
 t1 = PythonOperator(
