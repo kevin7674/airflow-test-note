@@ -46,10 +46,10 @@ def task_3():
         f.write('%s\n' % current_time)
 		
 # 定義要執行的Python函數4
-def task_4():
-    current_time = str(datetime.today())
-    with open('/usr/local/airflow/task_4.txt', 'a') as f:
-        f.write('%s\n' % current_time)
+#def task_4():
+#    current_time = str(datetime.today())
+#    with open('/usr/local/airflow/task_4.txt', 'a') as f:
+#        f.write('%s\n' % current_time)
 		
 # 定義要執行的Python函數5
 def task_5():
@@ -81,9 +81,8 @@ t3 = PythonOperator(
 )
 
 # 定義要執行的的task 4
-t4 = PythonOperator(
+t4 = DummyOperator(
     task_id='task_4',  # task_id
-    python_callable=task_4,  # 指定要執行的函數
     dag=dag,  # 指定歸屬的dag
 )
 
