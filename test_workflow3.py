@@ -58,12 +58,11 @@ def task_5():
         f.write('%s\n' % current_time)
 
 # 定義要執行的task 1
-t1 = BashOperator(
-    task_id='task1_bash',
-    bash_command='date',  # print_date	
-    bash_command='sleep 15',
+t1 = PythonOperator(
+    task_id='task1',  # task_id
+    python_callable=task_1,  # 指定要執行的函數
     dag=dag,  # 指定歸屬的dag
-    retries=3,  # 失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。 
+    retries=1,  # 失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。
 )
 
 # 定義要執行的task 2
@@ -79,6 +78,7 @@ t3 = PythonOperator(
     task_id='task3',  # task_id
     python_callable=task_3,  # 指定要執行的函數
     dag=dag,  # 指定歸屬的dag
+    retries=1,  # 失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。
 )
 
 # 定義要執行的的task 4
@@ -89,10 +89,12 @@ t4 = DummyOperator(
 )
 
 # 定義要執行的的task 5
-t5 = PythonOperator(
-    task_id='task5',  # task_id
-    python_callable=task_5,  # 指定要執行的函數
+t5 = BashOperator(
+    task_id='task5_bash',
+    bash_command='date',  # print_date	
+    bash_command='sleep 15',
     dag=dag,  # 指定歸屬的dag
+    retries=3,  # 失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。 
 )
 
 #t2.set_upstream(t1)
