@@ -1,7 +1,7 @@
 # coding: utf-8
 
 from airflow import DAG
-from airflow.operators.python_operator import PythonOperator
+from airflow.operators.python_operator import PythonOperator, BranchPythonOperator
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.dummy_operator import DummyOperator
 from datetime import datetime, timedelta
@@ -67,7 +67,7 @@ t1 = PythonOperator(
 
 # 定義要執行的task 2
 t2 = PythonOperator(
-    task_id='task2',  # task_id
+    task_id='task2_branch',  # task_id
     python_callable=task_2,  # 指定要執行的函數
     dag=dag,  # 指定歸屬的dag
     retries=1,  # 失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。
