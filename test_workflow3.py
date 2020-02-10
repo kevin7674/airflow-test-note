@@ -26,11 +26,11 @@ dag = DAG(
 )
 
 # 定義要執行的Python函數1
-def task_1():
-    current_time = str(datetime.today())
-    with open('/usr/local/airflow/task_1.txt', 'a') as f:
-        f.write('%s\n' % current_time)
-    assert 1 == 1  # 可以在函数中使用assert斷言來判斷執行是否正常，也可以直接抛出異常行是否正常，也可以直接抛出異常
+#def task_1():
+#    current_time = str(datetime.today())
+#    with open('/usr/local/airflow/task_1.txt', 'a') as f:
+#        f.write('%s\n' % current_time)
+#    assert 1 == 1  # 可以在函数中使用assert斷言來判斷執行是否正常，也可以直接抛出異常行是否正常，也可以直接抛出異常
 
 # 定義要執行的Python函數2
 def task_2():
@@ -58,39 +58,39 @@ def task_5():
         f.write('%s\n' % current_time)
 
 # 定義要執行的task 1
-t1 = PythonOperator(
-    task_id='task_1',  # task_id
-    python_callable=task_1,  # 指定要執行的函數
+t1 = BashOperator(
+    task_id='print_date',
+    bash_command='sleep 5',
     dag=dag,  # 指定歸屬的dag
-    retries=1,  # 重寫失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。
+    retries=3,  # 失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。 
 )
 
 # 定義要執行的task 2
 t2 = PythonOperator(
     task_id='task_2',  # task_id
-    python_callable=task_2,  # 指定要執行的函数
+    python_callable=task_2,  # 指定要執行的函數
     dag=dag,  # 指定歸屬的dag
-    retries=1,  # 重寫失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。
+    retries=1,  # 失敗重試次數,如果不寫,預設使用dag中default_args指定的設置。
 )
 
 # 定義要執行的的task 3
 t3 = PythonOperator(
     task_id='task_3',  # task_id
-    python_callable=task_3,  # 指定要執行的函数
+    python_callable=task_3,  # 指定要執行的函數
     dag=dag,  # 指定歸屬的dag
 )
 
 # 定義要執行的的task 4
 t4 = PythonOperator(
     task_id='task_4',  # task_id
-    python_callable=task_4,  # 指定要執行的函数
+    python_callable=task_4,  # 指定要執行的函數
     dag=dag,  # 指定歸屬的dag
 )
 
 # 定義要執行的的task 5
 t5 = PythonOperator(
     task_id='task_5',  # task_id
-    python_callable=task_5,  # 指定要執行的函数
+    python_callable=task_5,  # 指定要執行的函數
     dag=dag,  # 指定歸屬的dag
 )
 
