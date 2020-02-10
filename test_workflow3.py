@@ -26,11 +26,11 @@ dag = DAG(
 )
 
 # 定義要執行的Python函數1
-#def task_1():
-#    current_time = str(datetime.today())
-#    with open('/usr/local/airflow/task_1.txt', 'a') as f:
-#        f.write('%s\n' % current_time)
-#    assert 1 == 1  # 可以在函数中使用assert斷言來判斷執行是否正常，也可以直接抛出異常行是否正常，也可以直接抛出異常
+def task_1():
+    current_time = str(datetime.today())
+    with open('/usr/local/airflow/task_1.txt', 'a') as f:
+        f.write('%s\n' % current_time)
+    assert 1 == 1  # 可以在函数中使用assert斷言來判斷執行是否正常，也可以直接抛出異常行是否正常，也可以直接抛出異常
 
 # 定義要執行的Python函數2
 def task_2():
